@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js">
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js">
+	</script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<h1>Dustbin Status Tracker</h1>
+
+	<div class="content">
+<h3 style="color:#fff"> Add records manually: </h3>
+		<form id="add-cafe-form">
+			<input type="text" name="name" placeholder="Dustbin id">
+      <input type="text" name="city" placeholder="Dustbin Status">
+      <button>Add Record</button>
+    </form>
+
+    <ul id="cafe-list"></ul>
+
+  </div>
+
+        <script>
+            // Initialize Firebase
+ 						var config = { 
+							apiKey: "AIzaSyAGyhUT7TxwzTa4VmgwnLuQw5CMYTIYBQg",
+							authDomain: "awesomewritingtips.firebaseapp.com",
+							databaseURL: "https://awesomewritingtips.firebaseio.com",
+							projectId: "awesomewritingtips",
+							storageBucket: "awesomewritingtips.appspot.com",
+							messagingSenderId: "80624092763",
+							appId: "1:80624092763:web:261652bc79f863b963617e",
+							measurementId: "G-YMCK4CW2PD"
+						 };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
